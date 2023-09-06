@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-
+import Navbar from "../../componentes/Nabvar/Navbar"
+import Footer from "../../componentes/Footer/Footer"
 
 
 class Notfound extends Component{
@@ -11,7 +12,11 @@ class Notfound extends Component{
     }
 
     render(){
-        
+
+        return(
+            <p> hola</p>
+        );
+
     } 
 }
 

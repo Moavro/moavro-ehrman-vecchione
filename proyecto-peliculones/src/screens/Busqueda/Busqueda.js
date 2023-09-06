@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-
+import Navbar from "../../componentes/Nabvar/Navbar"
+import Footer from "../../componentes/Footer/Footer"
 
 
 class Busqueda extends Component{
@@ -12,6 +13,9 @@ class Busqueda extends Component{
 
     render(){
         
+        return(
+            <p> hola</p>
+        );
     } 
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-
+import Navbar from "../../componentes/Nabvar/Navbar"
+import Footer from "../../componentes/Footer/Footer"
 
 
 class Favoritos extends Component{
@@ -12,6 +13,9 @@ class Favoritos extends Component{
 
     render(){
         
+        return(
+            <p> hola</p>
+        );
     } 
 }
 
