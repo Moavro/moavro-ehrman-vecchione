@@ -1,26 +1,27 @@
 import React, {Component} from "react";
+import "./pelis.css"
+
 
 class Pelis extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             value: ""
         }
     }
     componentDidMount(){
-        fetch("https://api.themoviedb.org/3/movie/popular?api_key=7bb779dc3f73731cbf146b210f1f6ce4&language=en-US")
-        .then( response => response.json())
-        .then( data => console.log(data)
-        )
-        .catch( error => console.log(error))
     }
     
     render(){
+        console.log(this.props.datosPeli)
 
         return(
-            <div>
-                {console.log(this.state.value)}
-            </div>
+            <React.Fragment>
+            <article className="peliculasjs">
+                <h3 className='peliculasjs'>{this.props.datosPeli.title}</h3>
+                <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoPeli}`} />
+            </article>
+            </React.Fragment>
         )
     }
 }

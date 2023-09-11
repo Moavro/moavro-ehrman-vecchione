@@ -1,0 +1,15 @@
+.pelis{
+    width: 300px;
+    height: 400px;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    border: solid 4px rgb(4, 39, 88);
+}
+.peliculasjs{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 23px;
+    padding-left: 35px;
+    margin-bottom: 15px;
+}
