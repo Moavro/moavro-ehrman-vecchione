@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import Navbar from "../../componentes/Nabvar/Navbar"
-import Footer from "../../componentes/Footer/Footer"
+
 
 class Home extends Component{
     constructor(){
@@ -9,14 +8,18 @@ class Home extends Component{
             value:""
         }            
     }
+    componentDidMount(){
+        fetch("https://api.themoviedb.org/3/movie/popular?api_key=57d7f4097b2e7b7015db489746e7c24c&language=en-US")
+        .then( response => response.json())
+        .then( data => console.log(data)
+        )
+        .catch( error => console.log(error))
+    }
 
     render(){
-
         return(
             <React.Fragment>
-            <Footer></Footer>
             <p> aca la pagiina bro</p>
-            <Navbar></Navbar>
             </React.Fragment>
         );
     } 
