@@ -8,6 +8,7 @@ import Navbar from "./componentes/Nabvar/Navbar";
 import Footer from "./componentes/Footer/Footer";
 import Home from "./screens/Home/Home"
 
+
 function App() {
   return (
     <React.Fragment>
