@@ -7,7 +7,8 @@ import Favoritos from "./screens/Favoritos/Favoritos"
 import Navbar from "./componentes/Nabvar/Navbar";
 import Footer from "./componentes/Footer/Footer";
 import Home from "./screens/Home/Home"
-
+import Pelis from "./screens/Vertodo/Pelis"
+import Series from "./screens/Vertodo/Series"
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home}  /> 
         <Route path="/detalle/:id"component={Detalle}  />
+        <Route path="/pelis"component={Pelis}  />
+        <Route path="/series"component={Series}  />
         <Route path="" component={Notfound}  />
         <Route path="/favoritos" component={Favoritos}  />
         <Route path="/busqueda" component={Busqueda}  />

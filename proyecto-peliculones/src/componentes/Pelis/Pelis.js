@@ -13,7 +13,7 @@ class Pelis extends Component{
     }
     
     render(){
-        console.log(this.props.datosPeli)
+        // console.log(this.props.datosPeli)
 
         return(
             <React.Fragment>
