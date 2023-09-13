@@ -27,14 +27,23 @@ class Home extends Component{
         return(
             <React.Fragment>
                 <div className="body_nofooter">
-                {this.state.value.map((pelicula, idx) => (
-                    <Pelis
-                    key = {pelicula.name + idx}
-                    datosPeli = {pelicula}
-                    fotoPeli = {pelicula.poster_path}
-                    />
- 
-                ))}
+                    <h2 className="seccion_peliculas">Peliculas Populares</h2>
+                    <section className="seccion_populares">
+                        {this.state.value.map((pelicula, idx) => (
+                            <Pelis
+                            key = {pelicula.name + idx}
+                            datosPeli = {pelicula}
+                            fotoPeli = {pelicula.poster_path}
+                            />
+    
+                        ))}
+                    </section>
+                    <h2 className="seccion_peliculas">Series populares</h2>
+                    <section className="seccion_series">
+                    </section>
+                    <h2 className="seccion_peliculas">Para pochoclear 🍿</h2>
+                    <section className="seccion_calificadas">
+                    </section>
                 </div>
                 
 
@@ -44,5 +53,6 @@ class Home extends Component{
         );
     } 
 }
+
 
 export default Home
