@@ -1,0 +1,82 @@
+.footer{
+    background-color: #27649f;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo{
+    height: 40px;
+    width: 62px;
+    margin-right: 10px;
+    box-sizing: content-box;   
+}
+
+.logotmdb{
+    height:35px;
+    width: 110px;
+}
+
+.buscador{
+    margin-top: 7px;
+}
+
+.navegador{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+
+.items{
+    text-decoration: none;
+    margin-right: 20px;
+}
+.items:hover{
+    color: #031c2c;
+
+}
+li{
+    display: inline-block;
+}
+
+.lista_footer{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.texto_footer{
+    margin-top: 10px;
+    padding: 20px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+h3{
+    text-align: center;
+    text-decoration: none;
+}
+
+h6{
+    text-align: center;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.caja_generos{
+    padding: 50px;
+}
+
+.items_footer{
+    text-decoration: none;
+}
+
+.logo_footer{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 80px;
+}
