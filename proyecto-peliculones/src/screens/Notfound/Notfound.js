@@ -1,22 +1,13 @@
-import React, {Component} from "react";
+import React from "react";
 
-
-
-class Notfound extends Component{
-    constructor(){
-        super();
-        this.state = {
-            value:""
-        }            
-    }
-
-    render(){
-
-        return(
-            <p> hola</p>
-        );
-
-    } 
+function NotFound () {
+    return(
+        <React.Fragment>
+            <h1>
+                La pagina buscada no se encuentra
+            </h1>
+        </React.Fragment>
+    )
 }
 
-export default Notfound
+export default NotFound;
