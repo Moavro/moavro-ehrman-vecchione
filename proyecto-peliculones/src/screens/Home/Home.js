@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Pelis from "../../componentes/Pelis/Pelis";
 import Series from "../../componentes/Series/Series"
 import "./home.css"
+import {Link} from "react-router-dom/cjs/react-router-dom.min"
 
 
 class Home extends Component {
@@ -54,19 +55,26 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
+                <form className= "buscador" action="./buscador.html" method="get">
+                    <input className ="barra_buscadora" type="text" placeholder="Buscador" name="buscador" value=""></input>
+                </form>
                 <div className="body_nofooter">
                     <h2 className="seccion_peliculas">Peliculas Populares</h2>
+                    <Link to="/pelis">Ver todas las Peliculas</Link>
                     <section className="seccion_populares">
                         {this.state.value.map((pelicula, idx) => (
                             <Pelis
                                 key={pelicula.name + idx}
+                                id={idx}
                                 datosPeli={pelicula}
                                 fotoPeli={pelicula.poster_path}
+                                descripcion={pelicula.overview}
                             />
 
                         ))}
                     </section>
                     <h2 className="seccion_peliculas">Series populares</h2>
+                    <Link to="/series">Ver todas las series</Link>
                     <section className="seccion_series">
                         {this.state.valor.map((serie, idx) => (
                             <Series
