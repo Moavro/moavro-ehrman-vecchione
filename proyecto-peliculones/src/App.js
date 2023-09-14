@@ -6,8 +6,8 @@ import Favoritos from "./screens/Favoritos/Favoritos"
 import Navbar from "./componentes/Nabvar/Navbar";
 import Footer from "./componentes/Footer/Footer";
 import Home from "./screens/Home/Home"
-import Pelis from "./screens/Vertodo/Pelis"
-import Series from "./screens/Vertodo/Series"
+import TodoPelis from "./screens/Vertodo/TodoPelis"
+import TodoSeries from "./screens/Vertodo/TodoSereis"
 import DetallePeli from "./screens/Detalle/DetallePeli";
 import DetalleSerie from "./screens/Detalle/DetalleSerie";
 
@@ -19,8 +19,8 @@ function App() {
         <Route path="/" exact={true} component={Home}  /> 
         <Route path="/detallePeli/id/:id"component={DetallePeli}  />
         <Route path="/detalleSerie/id/:id"component={DetalleSerie}  />
-        <Route path="/pelis"component={Pelis}  />
-        <Route path="/series"component={Series}  />
+        <Route path="/pelis"component={TodoPelis}  />
+        <Route path="/series"component={TodoSeries}  />
         <Route path="/favoritos" component={Favoritos}  />
         <Route path="/busqueda" component={Busqueda}  />
         <Route path="" exact={true} component={Notfound}  />

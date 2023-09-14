@@ -47,8 +47,9 @@ class Pelis extends Component{
 
 
     }
+
     verDescripcion(){
-        if(this.state.descripcion == 'Ver mas'){
+        if(this.state.descripcion === 'Ver mas'){
             this.setState({
                 descripcion: 'Ocultar descripcion',
             })
@@ -61,9 +62,6 @@ class Pelis extends Component{
     }
 
 
-    
-
-    
     render(){
         // console.log(this.props.datosPeli)
         console.log(localStorage);
@@ -74,7 +72,7 @@ class Pelis extends Component{
             <React.Fragment>
             <article className="peliculasjs">
                 <h3 className='peliculasjs'>{this.props.datosPeli.title}</h3>
-                <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoPeli}`} />
+                <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoPeli}`} alt="foto de pelicula"/>
                 <button onClick={() => this.favoritos(this.props.id)}>{this.state.textoBotonFavs}</button>
                 <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
                 {this.state.descripcion === "Ocultar descripcion" ? <p>{this.props.descripcion}</p> : false}

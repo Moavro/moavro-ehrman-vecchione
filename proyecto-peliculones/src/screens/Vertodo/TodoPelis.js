@@ -1,8 +1,8 @@
 import React, {Component} from "react";
+import Pelis from "../../componentes/Pelis/Pelis";
 
 
-
-class Pelis extends Component{
+class TodoPelis extends Component{
     constructor(){
         super();
         this.state = {
@@ -23,7 +23,7 @@ class Pelis extends Component{
         console.log(this.state.peli)
         return(
                 <React.Fragment>
-                    <h1 className="seccion_peliculas"> Peliculas</h1>
+                    {/* <h1 className="seccion_peliculas"> Peliculas</h1> */}
                     <section className="seccion_populares">
                         {this.state.peli.map((pelicula, idx) => {
                              if (idx < 5) {
@@ -43,4 +43,4 @@ class Pelis extends Component{
     } 
 }
 
-export default Pelis
+export default TodoPelis
