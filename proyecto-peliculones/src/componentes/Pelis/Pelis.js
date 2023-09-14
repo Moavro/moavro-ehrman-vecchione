@@ -14,14 +14,20 @@ class Pelis extends Component{
     componentDidMount(){
     }
     verDescripcion(){
-        this.state.descripcion = this.props.descripcion[this.props.id]
+        let contenido;
+        if (contenido = this.props.descirpcion) {
+            contenido = ""
+            
+        }else{
+            contenido = this.props.descirpcion
+        }
 
     }
-
     
     render(){
         // console.log(this.props.datosPeli)
-        console.log(this.state.descripcion);
+        let contenido;
+
 
 
         return(
@@ -29,7 +35,8 @@ class Pelis extends Component{
             <article className="peliculasjs">
                 <h3 className='peliculasjs'>{this.props.datosPeli.title}</h3>
                 <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoPeli}`} />
-                <button onClick={() => this.verDescripcion()}>Ver descripcion {this.state.descripcion}</button>
+                <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
+                <p>{contenido}</p>
                 <Link to={`/detalle/${this.props.id}`}>Ver detalles</Link>
                 
             </article>
