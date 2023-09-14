@@ -7,13 +7,27 @@ class Series extends Component{
     constructor(props){
         super(props);
         this.state = {
-            value: ""
+            value: "",
+            descripcion: "Ver mas"
+            
         }
     }
 
 
     
     componentDidMount(){
+    }
+    verDescripcion(){
+        if(this.state.descripcion == 'Ver mas'){
+            this.setState({
+                descripcion: 'Ocultar descripcion',
+            })
+        } else{
+            this.setState({
+                descripcion: 'Ver mas',
+
+            })
+        }
     }
     
     render(){
@@ -24,8 +38,10 @@ class Series extends Component{
             <article className="peliculasjs">
                 <h3 className='peliculasjs'>{this.props.datosSerie.name}</h3>
                 <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoSeries}`} />
-                <button>Ver descripcion</button>
-                <Link to="/detalle/:id">Ver detalles</Link>
+                <button>Agregar a favoritos</button>
+                <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
+                {this.state.descripcion === "Ocultar descripcion" ? <p>{this.props.descripcion}</p> : false}
+                <Link to={`/detalle/${this.props.id}`}>Ver detalles</Link>
             </article>
             </React.Fragment>
         )

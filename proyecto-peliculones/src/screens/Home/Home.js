@@ -62,28 +62,33 @@ class Home extends Component {
                     <h2 className="seccion_peliculas">Peliculas Populares</h2>
                     <Link to="/pelis">Ver todas las Peliculas</Link>
                     <section className="seccion_populares">
-                        {this.state.value.map((pelicula, idx) => (
-                            <Pelis
+                        {this.state.value.map((pelicula, idx) => {
+                             if (idx < 5) {
+                                return (<Pelis
                                 key={pelicula.name + idx}
                                 id={idx}
                                 datosPeli={pelicula}
                                 fotoPeli={pelicula.poster_path}
                                 descripcion={pelicula.overview}
-                            />
-
-                        ))}
+                            />)
+                            } else {return (null)}
+                        })}
                     </section>
                     <h2 className="seccion_peliculas">Series populares</h2>
                     <Link to="/series">Ver todas las series</Link>
                     <section className="seccion_series">
-                        {this.state.valor.map((serie, idx) => (
-                            <Series
+                    {this.state.valor.map((serie, idx) => {
+                             if (idx < 5) {
+                                return (<Series
                                 key={serie.name + idx}
+                                id={idx}
                                 datosSerie={serie}
                                 fotoSeries={serie.poster_path}
-                            />
-
-                        ))}
+                                descripcion={serie.overview}
+                            />)
+                            } else {return (null)}
+                        })}
+                       
                     </section>
                 </div>
             </React.Fragment>
