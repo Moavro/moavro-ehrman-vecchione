@@ -19,9 +19,9 @@ function App() {
         <Route path="/detalle/:id"component={Detalle}  />
         <Route path="/pelis"component={Pelis}  />
         <Route path="/series"component={Series}  />
-        <Route path="" component={Notfound}  />
         <Route path="/favoritos" component={Favoritos}  />
         <Route path="/busqueda" component={Busqueda}  />
+        <Route path="" exact={true} component={Notfound}  />
       </Switch>
       <Footer/>
     </React.Fragment>

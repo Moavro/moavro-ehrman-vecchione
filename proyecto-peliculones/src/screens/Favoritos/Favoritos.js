@@ -11,9 +11,13 @@ class Favoritos extends Component{
     }
 
     render(){
+        console.log(localStorage);
         
         return(
-            <p> hola</p>
+            <div>
+                <h1>Aqui estan tus peliculas favoritas!</h1>
+                <h1>Aqui estan tus series favoritas!</h1>
+            </div>
         );
     } 
 }
