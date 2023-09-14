@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 
 
-class Series extends Component{
+class TodoSeries extends Component{
     constructor(){
         super();
         this.state = {
@@ -18,4 +18,4 @@ class Series extends Component{
     } 
 }
 
-export default Series
+export default TodoSeries
