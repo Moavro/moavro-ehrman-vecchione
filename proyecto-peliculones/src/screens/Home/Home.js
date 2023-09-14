@@ -66,7 +66,7 @@ class Home extends Component {
                              if (idx < 5) {
                                 return (<Pelis
                                 key={pelicula.name + idx}
-                                id={idx}
+                                id={pelicula.id}
                                 datosPeli={pelicula}
                                 fotoPeli={pelicula.poster_path}
                                 descripcion={pelicula.overview}
@@ -81,7 +81,7 @@ class Home extends Component {
                              if (idx < 5) {
                                 return (<Series
                                 key={serie.name + idx}
-                                id={idx}
+                                id={serie.id}
                                 datosSerie={serie}
                                 fotoSeries={serie.poster_path}
                                 descripcion={serie.overview}

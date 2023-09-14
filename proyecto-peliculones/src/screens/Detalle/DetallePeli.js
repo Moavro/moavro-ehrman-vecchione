@@ -3,7 +3,7 @@ import "./Detalle.css"
 
 
 
-class Detalle extends Component{
+class DetallePeli extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -53,7 +53,7 @@ class Detalle extends Component{
                             <h6 className="texto_calificacion"> "Calificacion:{this.state.peli.vote_average}</h6>
                             </li>
                             <li className="list_box3_ds">
-                                <h6>Genero:{this.state.peli.genres.map((genre,idx)=> <li className="texto_generos" key= {genre + idx}>{genre.name}</li>)}</h6>
+                            <h6>Genero: {this.state.peli.genres ? this.state.peli.genres.map((genre, idx) => <li className="texto_generos" key={genre + idx}>{genre.name}</li>) : "Sin géneros"}</h6>
                             </li>
                             <button type="button" className="boton_recomendaciones" >Añadir a favoritos</button>
                         </div>
@@ -64,4 +64,4 @@ class Detalle extends Component{
     } 
 }
 
-export default Detalle
+export default DetallePeli

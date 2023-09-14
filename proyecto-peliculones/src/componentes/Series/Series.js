@@ -41,7 +41,7 @@ class Series extends Component{
                 <button>Agregar a favoritos</button>
                 <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
                 {this.state.descripcion === "Ocultar descripcion" ? <p>{this.props.descripcion}</p> : false}
-                <Link to={`/detalle/${this.props.id}`}>Ver detalles</Link>
+                <Link to={`/detalleSerie/id/${this.props.id}`}>Ver detalles</Link>
             </article>
             </React.Fragment>
         )

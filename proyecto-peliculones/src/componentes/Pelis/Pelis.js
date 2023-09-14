@@ -78,7 +78,7 @@ class Pelis extends Component{
                 <button onClick={() => this.favoritos(this.props.id)}>{this.state.textoBotonFavs}</button>
                 <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
                 {this.state.descripcion === "Ocultar descripcion" ? <p>{this.props.descripcion}</p> : false}
-                <Link to={`/detalle/${this.props.id}`}>Ver detalles</Link>
+                <Link to={`/detallePeli/id/${this.props.id}`}>Ver detalles</Link>
                 
             </article>
             </React.Fragment>

@@ -8,7 +8,8 @@ import Footer from "./componentes/Footer/Footer";
 import Home from "./screens/Home/Home"
 import Pelis from "./screens/Vertodo/Pelis"
 import Series from "./screens/Vertodo/Series"
-import Detalle from "./screens/Detalle/Detalle";
+import DetallePeli from "./screens/Detalle/DetallePeli";
+import DetalleSerie from "./screens/Detalle/DetalleSerie";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={Home}  /> 
-        <Route path="/detalle/:id"component={Detalle}  />
+        <Route path="/detallePeli/id/:id"component={DetallePeli}  />
+        <Route path="/detalleSerie/id/:id"component={DetalleSerie}  />
         <Route path="/pelis"component={Pelis}  />
         <Route path="/series"component={Series}  />
         <Route path="/favoritos" component={Favoritos}  />
