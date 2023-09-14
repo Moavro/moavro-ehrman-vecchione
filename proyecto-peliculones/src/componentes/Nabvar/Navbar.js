@@ -8,9 +8,7 @@ function Navbar(){
             <div className="navegador">
                 <img src="img/logo_peliculones.png" alt="logo" className="logo"></img>
                 <h1 clasName="tituloprincipal">PELICULONES</h1>
-                <form className= "buscador" action="./buscador.html" method="get">
-                    <input className ="barra_buscadora" type="text" placeholder="Buscador" name="buscador" value=""></input>
-                </form>
+                
             </div>
             <nav className="secciones_header">
                 <ul>
@@ -18,10 +16,13 @@ function Navbar(){
                         <Link to="/">Home</Link>
                     </li>
                     <li className="items">
-                        <Link to="/personajes">Ver todas las Peliculas</Link>
+                        <Link to="/pelis">Ver todas las Peliculas</Link>
                     </li>
                     <li className="items">
-                        <Link to="/favoritos">Ver todas las series</Link>
+                        <Link to="/series">Ver todas las series</Link>
+                    </li>
+                    <li className="items">
+                        <Link to="/favoritos">Favoritos</Link>
                     </li>
                 </ul>
             </nav>   

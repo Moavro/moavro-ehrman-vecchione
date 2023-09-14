@@ -8,25 +8,30 @@ class Pelis extends Component{
         super(props);
         this.state = {
             value: "",
-            descripcion: ""
+            descripcion: "Ver mas"
         }
     }
     componentDidMount(){
     }
     verDescripcion(){
-        let contenido;
-        if (contenido = this.props.descirpcion) {
-            contenido = ""
-            
-        }else{
-            contenido = this.props.descirpcion
-        }
+        if(this.state.descripcion == 'Ver mas'){
+            this.setState({
+                descripcion: 'Ocultar descripcion',
+            })
+        } else{
+            this.setState({
+                descripcion: 'Ver mas',
 
+            })
+        }
     }
+
+    
+
     
     render(){
         // console.log(this.props.datosPeli)
-        let contenido;
+        console.log(localStorage);
 
 
 
@@ -35,8 +40,9 @@ class Pelis extends Component{
             <article className="peliculasjs">
                 <h3 className='peliculasjs'>{this.props.datosPeli.title}</h3>
                 <img className="pelis" src={`https://image.tmdb.org/t/p/w500${this.props.fotoPeli}`} />
+                <button>Agregar a favoritos</button>
                 <button onClick={() => this.verDescripcion()}>Ver descripcion</button>
-                <p>{contenido}</p>
+                {this.state.descripcion === "Ocultar descripcion" ? <p>{this.props.descripcion}</p> : false}
                 <Link to={`/detalle/${this.props.id}`}>Ver detalles</Link>
                 
             </article>
