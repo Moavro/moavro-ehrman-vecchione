@@ -1,0 +1,87 @@
+
+
+.titulo_detalle{
+        text-align: center;
+}
+
+.detalles_section{
+    padding: 20px;
+    flex-direction: row;
+}
+
+.box_dp_1{
+    display: flex;
+    flex-direction: row;
+}
+
+.box_dp_2{
+    width: 560px;
+}
+
+.box_dp_3{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 18px;
+}
+
+.contenedor_imagen{
+    width: 448;
+}
+
+.sinopsis_detalle_peli{
+    font-size: 20px;
+    padding-top: 18px;
+}
+
+.texto_sinopsis{
+    padding-bottom: 30px;
+}
+
+.boton_recomendaciones{
+    text-align: center;
+    width: 500px;
+    height: 50px;
+}
+
+.recomendaciones{
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.list_box3_dp{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.texto_duracion{
+    text-align: center;
+    color:#296fb4;
+}
+
+.texto_estreno{
+    text-align: center;
+    color:#296fb4;
+}
+
+.texto_calificacion{
+    text-align: center;
+    color:#296fb4;
+}
+
+.list_box3_ds{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.texto_generos{
+    text-align: center;
+    padding-top: 5px;
+    color:#296fb4;
+}
+
+body{
+    background-color: #031c2c;
+}
+
