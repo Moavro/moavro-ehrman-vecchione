@@ -10,7 +10,8 @@ class Home extends Component {
         super();
         this.state = {
             value: [],
-            valor: []
+            valor: [],
+            texto: ""
         }
     }
 
@@ -22,14 +23,10 @@ class Home extends Component {
                 this.setState({
                     value: data.results,
                     titulo: data.results.name,
-                    foto_peli: data.results.poster_path,
-                    
-                    
+                    foto_peli: data.results.poster_path,     
                 }
                 
                 )
-                
-
             }
             )
             .catch(error => console.log(error))
@@ -43,7 +40,6 @@ class Home extends Component {
                 tituloSeries: data.results.name,
                 fotoSeries: data.results.poster_path
             })
-
             ) 
             .catch(error => console.log(error))
     }
@@ -52,12 +48,25 @@ class Home extends Component {
         this.apicallseries("https://api.themoviedb.org/3/tv/popular?api_key=57d7f4097b2e7b7015db489746e7c24c&language=en-US")
     }
 
+    evitarSubmit(event){
+        event.preventDefault();
+    }
+
+    controlarCambios(event){
+        this.setState({texto: event.target.value})
+    }
+
     render() {
         return (
             <React.Fragment>
-                <form className= "buscador" action="./buscador.html" method="get">
-                    <input className ="barra_buscadora" type="text" placeholder="Buscador" name="buscador" value=""></input>
+                <form onSubmit={(event) => this.evitarSubmit(event)}>
+                    <input type="text"  onChange={(event) => this.controlarCambios(event)} value={this.state.texto}  placeholder="Buscar"  />
+                    <Link to={`busqueda/${this.state.texto}`}>
+                        <button type="submit">Buscar</button> 
+                    </Link>
                 </form>
+
+
                 <div className="body_nofooter">
                     <h2 className="seccion_peliculas">Peliculas Populares</h2>
                     <Link to="/pelis">Ver todas las Peliculas</Link>
