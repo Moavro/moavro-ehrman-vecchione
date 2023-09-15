@@ -7,7 +7,7 @@ import Navbar from "./componentes/Nabvar/Navbar";
 import Footer from "./componentes/Footer/Footer";
 import Home from "./screens/Home/Home"
 import TodoPelis from "./screens/Vertodo/TodoPelis"
-import TodoSeries from "./screens/Vertodo/TodoSereis"
+import TodoSeries from "./screens/Vertodo/TodoSeries"
 import DetallePeli from "./screens/Detalle/DetallePeli";
 import DetalleSerie from "./screens/Detalle/DetalleSerie";
 
