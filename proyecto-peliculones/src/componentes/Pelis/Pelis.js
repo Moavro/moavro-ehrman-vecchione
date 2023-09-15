@@ -28,6 +28,9 @@ class Pelis extends Component{
     favoritos(id){
         let favoritos=[]
         let pelisIncluidas = localStorage.getItem('favoritos')
+        if (pelisIncluidas === null){
+            pelisIncluidas = []
+        }
         if(pelisIncluidas !== null){
             favoritos=JSON.parse(pelisIncluidas)
         }
@@ -64,7 +67,7 @@ class Pelis extends Component{
 
     render(){
         // console.log(this.props.datosPeli)
-        console.log(localStorage);
+       // console.log(this.props.datosPeli.title);
 
 
 
