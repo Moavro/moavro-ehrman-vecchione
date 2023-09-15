@@ -8,7 +8,8 @@ class DetallePeli extends Component{
         super(props);
         this.state = {
             peli:[],
-            loading:true
+            loading:true,
+            textoBotonFavs: "Agregar a favoritos"
         }            
     }
     componentDidMount(){
@@ -19,7 +20,31 @@ class DetallePeli extends Component{
         .then(data => this.setState({peli: data, loading:false}))
         .catch(er => console.log(er))
             
-        };
+        }
+
+        favoritos(id){
+            let favoritos=[]
+            let pelisIncluidas = localStorage.getItem('favoritos')
+            if(pelisIncluidas !== null){
+                favoritos=JSON.parse(pelisIncluidas)
+            }
+            if (favoritos.includes(id)){
+                favoritos = favoritos.filter(id2 => id2 !== id)
+                this.setState({
+                    textoBotonFavs:"Agregar a Favoritos"
+                })
+            } else{
+                favoritos.push(id)
+                this.setState({
+                    textoBotonFavs:"Sacar de favoritos"
+                })
+            }
+            let favoritosEnString=JSON.stringify(favoritos)
+            localStorage.setItem('favoritos', favoritosEnString)
+    
+    
+        }
+    
 
     render(){
         console.log(this.state.peli);
@@ -38,9 +63,6 @@ class DetallePeli extends Component{
                             <article className="sinopsis_detalle_peli"> </article>
                             <h6>Sinopsis:{this.state.peli.overview}</h6>
                             <p class="texto_sinopsis"> </p>
-                            <button type="button" className="boton_recomendaciones">Ver recomendaciones</button>
-                            <section className = 'recomendaciones'>
-                            </section>
                         </div>
                         <div className="box_dp_3">
                             <li className="list_box3_dp">
@@ -55,7 +77,7 @@ class DetallePeli extends Component{
                             <li className="list_box3_ds">
                             <h6>Genero: {this.state.peli.genres ? this.state.peli.genres.map((genre, idx) => <li className="texto_generos" key={genre + idx}>{genre.name}</li>) : "Sin géneros"}</h6>
                             </li>
-                            <button type="button" className="boton_recomendaciones" >Añadir a favoritos</button>
+                            <button onClick={() => this.favoritos(this.props.id)}>{this.state.textoBotonFavs}</button>
                         </div>
                     </div>
                 </section>
