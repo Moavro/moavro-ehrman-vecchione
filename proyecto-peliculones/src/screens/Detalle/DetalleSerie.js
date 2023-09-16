@@ -9,7 +9,7 @@ class DetalleSerie extends Component{
         this.state = {
             serie:[],
             loading:true,
-            textoBotonFavs: "Agregar a favoritos"
+            textoBotonFavs: "Agregar a Favoritos"
         }            
     }
     componentDidMount(){
@@ -20,11 +20,24 @@ class DetalleSerie extends Component{
         .then(data => this.setState({serie: data, loading:false}))
         .catch(er => console.log(er))
             
+        let favoritos=[]
+        let pelisIncluidas = localStorage.getItem('seriesFavorito')
+        console.log(localStorage.getItem('seriesFavorito'))
+        if(pelisIncluidas !== null){
+            favoritos=JSON.parse(pelisIncluidas)
+            if (favoritos.includes(id)){
+                this.setState({
+                    textoBotonFavs:"Sacar de Favoritos"
+                })
+            }
         }
+    }
+    
 
         favoritos(id){
+            console.log("id", id)
             let favoritos=[]
-            let pelisIncluidas = localStorage.getItem('favoritos')
+            let pelisIncluidas = localStorage.getItem('seriesFavorito')
             if(pelisIncluidas !== null){
                 favoritos=JSON.parse(pelisIncluidas)
             }
@@ -36,11 +49,11 @@ class DetalleSerie extends Component{
             } else{
                 favoritos.push(id)
                 this.setState({
-                    textoBotonFavs:"Sacar de favoritos"
+                    textoBotonFavs:"Sacar de Favoritos"
                 })
             }
             let favoritosEnString=JSON.stringify(favoritos)
-            localStorage.setItem('favoritos', favoritosEnString)
+            localStorage.setItem('seriesFavorito', favoritosEnString)
     
     
         }
@@ -77,7 +90,7 @@ class DetalleSerie extends Component{
                             <li className="list_box3_ds">
                             <h6>Genero: {this.state.serie.genres ? this.state.serie.genres.map((genre, idx) => <li className="texto_generos" key={genre + idx}>{genre.name}</li>) : "Sin géneros"}</h6>
                             </li>
-                            <button onClick={() => this.favoritos(this.props.id)}>{this.state.textoBotonFavs}</button>
+                            <button onClick={() => this.favoritos(this.props.match.params.id)}>{this.state.textoBotonFavs}</button>
                         </div>
                     </div>
                 </section>

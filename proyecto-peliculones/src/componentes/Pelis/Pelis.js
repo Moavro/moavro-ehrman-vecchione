@@ -13,7 +13,7 @@ class Pelis extends Component{
         }
     }
     componentDidMount(){
-        let traigoPeli = localStorage.getItem('favoritos')
+        let traigoPeli = localStorage.getItem('pelisFavorito')
         if (traigoPeli !== null){
             let favoritos = JSON.parse(traigoPeli)
 
@@ -27,11 +27,11 @@ class Pelis extends Component{
 
     favoritos(id){
         let favoritos=[]
-        let pelisIncluidas = localStorage.getItem('favoritos')
+        let pelisIncluidas = localStorage.getItem('pelisFavorito')
         if (pelisIncluidas === null){
             pelisIncluidas = []
         }
-        if(pelisIncluidas !== null){
+        else {
             favoritos=JSON.parse(pelisIncluidas)
         }
         if (favoritos.includes(id)){
@@ -46,7 +46,7 @@ class Pelis extends Component{
             })
         }
         let favoritosEnString=JSON.stringify(favoritos)
-        localStorage.setItem('favoritos', favoritosEnString)
+        localStorage.setItem('pelisFavorito', favoritosEnString)
 
 
     }

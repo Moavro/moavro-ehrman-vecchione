@@ -20,11 +20,22 @@ class DetallePeli extends Component{
         .then(data => this.setState({peli: data, loading:false}))
         .catch(er => console.log(er))
             
+        let favoritos=[]
+        let pelisIncluidas = localStorage.getItem('pelisFavorito')
+        console.log(localStorage.getItem('pelisFavorito'))
+        if(pelisIncluidas !== null){
+            favoritos=JSON.parse(pelisIncluidas)
+            if (favoritos.includes(id)){
+                this.setState({
+                    textoBotonFavs:"Sacar de Favoritos"
+                })
+            }
+        }
         }
 
         favoritos(id){
             let favoritos=[]
-            let pelisIncluidas = localStorage.getItem('favoritos')
+            let pelisIncluidas = localStorage.getItem('pelisFavorito')
             if(pelisIncluidas !== null){
                 favoritos=JSON.parse(pelisIncluidas)
             }
@@ -40,7 +51,7 @@ class DetallePeli extends Component{
                 })
             }
             let favoritosEnString=JSON.stringify(favoritos)
-            localStorage.setItem('favoritos', favoritosEnString)
+            localStorage.setItem('pelisFavorito', favoritosEnString)
     
     
         }
@@ -77,7 +88,7 @@ class DetallePeli extends Component{
                             <li className="list_box3_ds">
                             <h6>Genero: {this.state.peli.genres ? this.state.peli.genres.map((genre, idx) => <li className="texto_generos" key={genre + idx}>{genre.name}</li>) : "Sin géneros"}</h6>
                             </li>
-                            <button onClick={() => this.favoritos(this.props.id)}>{this.state.textoBotonFavs}</button>
+                            <button onClick={() => this.favoritos(this.props.match.params.id)}>{this.state.textoBotonFavs}</button>
                         </div>
                     </div>
                 </section>

@@ -7,7 +7,7 @@ function Navbar(){
         <header className="header">
             <div className="navegador">
                 <img src="img/logo_peliculones.png" alt="logo" className="logo"></img>
-                <h1 clasName="tituloprincipal">PELICULONES</h1>
+                <h1 className="tituloprincipal">PELICULONES</h1>
                 
             </div>
             <nav className="secciones_header">

@@ -18,7 +18,7 @@ function Footer(){
                     <img src ='img/tmdb.png' alt = 'logo tmdb' className="logotmdb"></img>
                 </div>
                 <div className = "integrantes"> 
-                    <section classNae = "items_integrantes">
+                    <section className = "items_integrantes">
                         <article className = "lista_footer"><u>Developers</u></article>
                         <article className = "lista_footer">Tomás Moavro</article>
                         <article className = "lista_footer">Nicolás Ehrman</article>
