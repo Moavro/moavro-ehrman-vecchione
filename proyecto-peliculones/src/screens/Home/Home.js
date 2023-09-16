@@ -11,7 +11,8 @@ class Home extends Component {
         this.state = {
             value: [],
             valor: [],
-            texto: ""
+            texto: "",
+            loading: true
         }
     }
 
@@ -23,7 +24,8 @@ class Home extends Component {
                 this.setState({
                     value: data.results,
                     titulo: data.results.name,
-                    foto_peli: data.results.poster_path,     
+                    foto_peli: data.results.poster_path, 
+                    loading: false    
                 }
                 
                 )
@@ -38,7 +40,8 @@ class Home extends Component {
             .then(data => this.setState({ 
                 valor: data.results,
                 tituloSeries: data.results.name,
-                fotoSeries: data.results.poster_path
+                fotoSeries: data.results.poster_path,
+                loading: false
             })
             ) 
             .catch(error => console.log(error))
@@ -58,6 +61,9 @@ class Home extends Component {
 
     render() {
         return (
+            this.state.loading === true ? 
+                <p> Cargando...</p>
+             :            
             <React.Fragment>
                 <form onSubmit={(event) => this.evitarSubmit(event)}>
                     <input type="text"  onChange={(event) => this.controlarCambios(event)} value={this.state.texto}  placeholder="Buscar"  />
@@ -97,6 +103,7 @@ class Home extends Component {
                             />)
                             } else {return (null)}
                         })}
+                        
                        
                     </section>
                 </div>

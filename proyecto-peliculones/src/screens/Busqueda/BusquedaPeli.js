@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Pelis from "../../componentes/Pelis/Pelis";
 import "./Busqueda.css"
 
-class Busqueda extends Component{
+class BusquedaPeli extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -29,7 +29,6 @@ class Busqueda extends Component{
                 ) : (
                     <React.Fragment>
                     <div className="body_nofooter">
-                    <h2 className="seccion_peliculas">Peliculas Populares</h2>
                     <h2 class="seccion_buscador">Resultados de búsqueda para:{this.state.texto}  </h2>
                     <section className="seccion_populares">
                         {this.state.busqueda.length === 0? (
@@ -55,5 +54,5 @@ class Busqueda extends Component{
         
 }
 
-export default Busqueda
+export default BusquedaPeli
 
