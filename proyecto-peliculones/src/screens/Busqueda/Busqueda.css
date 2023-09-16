@@ -1,0 +1,29 @@
+.body_nofooter{
+    padding: 20px
+}
+
+.seccion_peliculas{
+    text-align: center;
+    padding-left: 8px;
+}
+
+.seccion_peliculas{
+    padding-right: 10px;
+    padding-left: 80px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+    font-size: 50px;
+}
+
+.seccion_populares{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 40px
+}
+
+.seccion_buscador{
+    padding: 50px;
+    padding-left: 85px;
+}

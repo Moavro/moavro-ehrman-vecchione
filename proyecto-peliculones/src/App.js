@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Busqueda from "./screens/Busqueda/Busqueda"
+import BusquedaPeli from "./screens/Busqueda/BusquedaPeli"
+import BusquedaSerie from "./screens/Busqueda/BusquedaSerie"
 import Notfound from "./screens/Notfound/Notfound"
 import Favoritos from "./screens/Favoritos/Favoritos"
 import Navbar from "./componentes/Nabvar/Navbar";
@@ -22,7 +23,8 @@ function App() {
         <Route path="/pelis"component={TodoPelis}  />
         <Route path="/series"component={TodoSeries}  />
         <Route path="/favoritos" component={Favoritos}  />
-        <Route path="/busqueda/:texto" component={Busqueda}  />
+        <Route path="/busqueda/:texto" component={BusquedaPeli}  />
+        <Route path="/busqueda/:texto" component={BusquedaSerie}  />
         <Route path="" exact={true} component={Notfound}  />
       </Switch>
       <Footer/>
